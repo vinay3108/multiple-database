@@ -3,15 +3,16 @@ import mongoose from 'mongoose';
 
 const sequelize = new Sequelize('open_project', 'root', 'password', {
     host: '127.0.0.1',
-    port:8081,
+    port:8082,
     dialect: 'sqlite'
 });
 
 const sequelizeConnection=async(sequelize)=>{
 
     try {
-        sequelize.authenticate();
-        console.log('MYSQL Connection has been established successfully.');
+        sequelize.authenticate().then((res)=>{
+            console.log('MYSQL Connection has been established successfully.');
+        })
         return sequelize;
         } catch (error) {
         console.error('Unable to connect to the database:MYSQL', error);
