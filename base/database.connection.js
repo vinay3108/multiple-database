@@ -10,7 +10,7 @@ const sequelize = new Sequelize('open_project', 'root', 'password', {
 const sequelizeConnection=async(sequelize)=>{
 
     try {
-        await sequelize.authenticate();
+        sequelize.authenticate();
         console.log('MYSQL Connection has been established successfully.');
         return sequelize;
         } catch (error) {

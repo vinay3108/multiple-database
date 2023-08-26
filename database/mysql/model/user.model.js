@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+import { DataTypes } from 'sequelize';
 import { sequelize } from '../../../base/database.connection.js';
 console.log("v");
 const User = sequelize.define('User', {
@@ -25,3 +25,4 @@ const User = sequelize.define('User', {
     .catch(error => {
       console.error('Error creating User table:', error);
     });
+    export default User;
